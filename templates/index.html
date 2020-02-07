@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+	     <meta charset="utf-8">
+		 
+        <title>Simple file upload using Python Flask</title>
+    </head>
+    <body>
+	<img src="{{ outputkeypoint }}" alt="result" style="width:500px;height:600px;">
+	
+        <form action="/imageupload" method="post" enctype="multipart/form-data">
+            Choose the image: <input type="file" name="photo"/><BR>
+                <input type="submit" value="Upload"/>
+        </form> 
+		<form action="/videoupload" method="post" enctype="multipart/form-data">
+            Choose the video: <input type="file" name="video"/><BR>
+                <input type="submit" value="Upload"/>
+        </form> 
+		<video id = "video1" width="620" height="640" controls>
+            <source src="{{ outputvideo }}" type="video/mp4">
+           
+            Your browser does not support the video tag.
+        </video>
+		<input id ="inp" type="text">
+		<button onclick="setplayspeed()"> set video speed</button>
+		<script>
+		  var vid = document.getElementById("video1");
+		  var value = document.getElementById("inp");
+		  function setplayspeed()
+		  {
+		    vid.playbackRate = value;
+		  }
+		 </script>
+		
+    </body>
+</html>
